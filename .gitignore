@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+hs_err_pid*
+
+# Node / Frontend
+node_modules/
+dist/
+unpackage/
+.hbuilderx/
+
+# Java / Maven / Backend
+target/
+.mvn/
+
+# Env
+.env
+.env.*
+
+# Temporary
+tmp/
+temp/

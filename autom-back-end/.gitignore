@@ -4,3 +4,4 @@
 *.iml
 *.log
 /.vscode/
+/src/main/resources/application-local.yml

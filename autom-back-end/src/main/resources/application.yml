@@ -2,19 +2,21 @@ spring:
   application:
     name: autom-back-end
   profiles:
-    active: ${SPRING_PROFILES_ACTIVE:local}
+    active: ${SPRING_PROFILES_ACTIVE:dev}
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: validate
     open-in-view: false
     properties:
       hibernate:
         format_sql: true
   jackson:
     time-zone: Asia/Shanghai
+  flyway:
+    enabled: true
 
 server:
-  port: 8081
+  port: ${SERVER_PORT:8081}
 
 management:
   endpoints:
@@ -25,3 +27,4 @@ management:
 logging:
   level:
     root: info
+    org.hibernate.SQL: ${LOG_SQL:false}

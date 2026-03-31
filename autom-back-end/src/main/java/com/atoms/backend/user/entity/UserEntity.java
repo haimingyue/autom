@@ -23,6 +23,9 @@ public class UserEntity extends BaseEntity {
     @Column(name = "wechat_open_id", unique = true)
     private String wechatOpenId;
 
+    @Column(name = "wechat_union_id", unique = true)
+    private String wechatUnionId;
+
     @Column(name = "display_name", nullable = false, length = 64)
     private String displayName;
 

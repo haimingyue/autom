@@ -1,18 +1,16 @@
 package com.atoms.backend.auth.support;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.atoms.backend.common.exception.BusinessException;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CurrentUserProvider {
 
-    private final Long mockUserId;
-
-    public CurrentUserProvider(@Value("${app.security.mock-user-id:1}") Long mockUserId) {
-        this.mockUserId = mockUserId;
-    }
-
     public Long getCurrentUserId() {
-        return mockUserId;
+        Long userId = CurrentUserContext.getUserId();
+        if (userId == null) {
+            throw new BusinessException(40101, "未登录或 token 无效");
+        }
+        return userId;
     }
 }

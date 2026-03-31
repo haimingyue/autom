@@ -36,10 +36,13 @@ DB_PORT=3307
 DB_NAME=atoms
 DB_USERNAME=root
 DB_PASSWORD=your-password
-APP_MOCK_USER_ID=1
+WECHAT_APP_ID=your-wechat-miniapp-appid
+WECHAT_APP_SECRET=your-wechat-miniapp-secret
+APP_SESSION_TTL_DAYS=30
+APP_SESSION_RENEW_BEFORE_HOURS=72
 ```
 
-首个版本通过 Flyway 自动建表，默认会写入一个开发用户 `id=1`。
+首个版本通过 Flyway 自动建表。登录态使用 `user_sessions` 持久化，业务接口需要 `Authorization: Bearer <token>`。
 
 基础健康检查：
 

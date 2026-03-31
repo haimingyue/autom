@@ -12,4 +12,9 @@ spring:
 
 app:
   security:
-    mock-user-id: 1
+    session-ttl-days: 30
+    session-renew-before-hours: 72
+  wechat:
+    app-id: test-app-id
+    app-secret: test-app-secret
+    code2session-url: http://127.0.0.1/mock-wechat/code2session

@@ -7,4 +7,9 @@ spring:
 
 app:
   security:
-    mock-user-id: ${APP_MOCK_USER_ID:1}
+    session-ttl-days: ${APP_SESSION_TTL_DAYS:30}
+    session-renew-before-hours: ${APP_SESSION_RENEW_BEFORE_HOURS:72}
+  wechat:
+    app-id: ${WECHAT_APP_ID:}
+    app-secret: ${WECHAT_APP_SECRET:}
+    code2session-url: ${WECHAT_CODE2SESSION_URL:https://api.weixin.qq.com/sns/jscode2session}

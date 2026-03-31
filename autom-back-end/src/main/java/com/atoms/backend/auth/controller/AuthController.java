@@ -24,4 +24,10 @@ public class AuthController {
     public ApiResponse<WechatLoginResponse> wechatLogin(@Valid @RequestBody WechatLoginRequest request) {
         return ApiResponse.success(authService.wechatLogin(request));
     }
+
+    @PostMapping("/logout")
+    public ApiResponse<Void> logout() {
+        authService.logoutCurrentSession();
+        return ApiResponse.success();
+    }
 }
